@@ -1,32 +1,19 @@
-.header {
-    background-color: chartreuse;
-    width: 100%;
-    max-height: 100px;
-    text-align: center;
-    line-height: 100px;
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center; /* Center vertically within the header */
-}
-
-.logoContainer {
-    flex: 1;
-}
-
-.logoContainer img {
-    height: 70px;
-    margin: 0 auto; /* Center horizontally within the logo container */
-    display: block; /* To remove text-align property */
-}
-
-.bd {
-    background-color: blue;
-    height: auto;
+* {
+    box-sizing: border-box;
+    padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
+body {
+    background-color: rgb(196, 196, 196);
+}
+a{
+    color: unset;
+    text-decoration: none;
+}
 .footer {
     background-color: brown;
     height: 100px;
 }
+
