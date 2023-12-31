@@ -1,63 +1,70 @@
 import React from "react";
 import "./gezilecek.css";
-import logo from "../../images/selimiye.jpg";
+import selimiye from "../../images/selimiye.jpg";
 
 function Gezilecek() {
   return (
     <div className="body">
-      <div className="content">
-        <div className="title">
-          SELİMİYE CAMİ
+      <div className="conteiner">
+        <div className="conteiner-left">
+          <div className="title">SELİMİYE CAMİ</div>
+          <div className="explanation">
+            Edirne’nin her yerinden tüm ihtişamı ile görülebilen, dört zarif
+            minaresi, muhteşem kubbesi ile eşsiz bir yapı olan Selimiye Camii
+            dünya tarihinin ünlü mimarlarından birisi olan Mimar Sinan’ın
+            eseridir.
+          </div>
+          <button className="button">Daha Fazla</button>
         </div>
-        <div className="image">
-          <img src={logo}/>
-        </div>
-        <div className="explanation">
-        Edirne’nin her yerinden tüm ihtişamı ile görülebilen, dört zarif minaresi, muhteşem kubbesi ile eşsiz bir yapı olan 
-        Selimiye Camii dünya tarihinin ünlü mimarlarından birisi olan Mimar Sinan’ın eseridir. 
-        <button className="button">Daha Fazla</button>
-        </div>
-      </div>
-      <div className="content">
-        <div className="title">
-          SELİMİYE CAMİ
-        </div>
-        <div className="image">
-          <img src={logo}/>
-        </div>
-        <div className="explanation">
-        Edirne’nin her yerinden tüm ihtişamı ile görülebilen, dört zarif minaresi, muhteşem kubbesi ile eşsiz bir yapı olan 
-        Selimiye Camii dünya tarihinin ünlü mimarlarından birisi olan Mimar Sinan’ın eseridir. 
-        <button className="button">Daha Fazla</button>
+        <div className="conteiner-right">
+          <img src={selimiye} />
         </div>
       </div>
-      <div className="content">
-        <div className="title">
-          SELİMİYE CAMİ
+      <div className="conteiner">
+        <div className="conteiner-left">
+          <div className="title">SELİMİYE CAMİ</div>
+          <div className="explanation">
+            Edirne’nin her yerinden tüm ihtişamı ile görülebilen, dört zarif
+            minaresi, muhteşem kubbesi ile eşsiz bir yapı olan Selimiye Camii
+            dünya tarihinin ünlü mimarlarından birisi olan Mimar Sinan’ın
+            eseridir.
+          </div>
+          <button className="button">Daha Fazla</button>
         </div>
-        <div className="image">
-          <img src={logo}/>
-        </div>
-        <div className="explanation">
-        Edirne’nin her yerinden tüm ihtişamı ile görülebilen, dört zarif minaresi, muhteşem kubbesi ile eşsiz bir yapı olan 
-        Selimiye Camii dünya tarihinin ünlü mimarlarından birisi olan Mimar Sinan’ın eseridir. 
-        <button className="button">Daha Fazla</button>
-        </div>
-      </div>
-      <div className="content">
-        <div className="title">
-          SELİMİYE CAMİ
-        </div>
-        <div className="image">
-          <img src={logo}/>
-        </div>
-        <div className="explanation">
-        Edirne’nin her yerinden tüm ihtişamı ile görülebilen, dört zarif minaresi, muhteşem kubbesi ile eşsiz bir yapı olan 
-        Selimiye Camii dünya tarihinin ünlü mimarlarından birisi olan Mimar Sinan’ın eseridir. 
-        <button className="button">Daha Fazla</button>
+        <div className="conteiner-right">
+          <img src={selimiye} />
         </div>
       </div>
-      
+      <div className="conteiner">
+        <div className="conteiner-left">
+          <div className="title">SELİMİYE CAMİ</div>
+          <div className="explanation">
+            Edirne’nin her yerinden tüm ihtişamı ile görülebilen, dört zarif
+            minaresi, muhteşem kubbesi ile eşsiz bir yapı olan Selimiye Camii
+            dünya tarihinin ünlü mimarlarından birisi olan Mimar Sinan’ın
+            eseridir.
+          </div>
+          <button className="button">Daha Fazla</button>
+        </div>
+        <div className="conteiner-right">
+          <img src={selimiye} />
+        </div>
+      </div>
+      <div className="conteiner">
+        <div className="conteiner-left">
+          <div className="title">SELİMİYE CAMİ</div>
+          <div className="explanation">
+            Edirne’nin her yerinden tüm ihtişamı ile görülebilen, dört zarif
+            minaresi, muhteşem kubbesi ile eşsiz bir yapı olan Selimiye Camii
+            dünya tarihinin ünlü mimarlarından birisi olan Mimar Sinan’ın
+            eseridir.
+          </div>
+          <button className="button">Daha Fazla</button>
+        </div>
+        <div className="conteiner-right">
+          <img src={selimiye} />
+        </div>
+      </div>
     </div>
   );
 }
