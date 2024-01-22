@@ -7,7 +7,7 @@ function Tarihi() {
     <div className="body">
       <div className="conteiner">
         <div className="conteiner-left">
-          <div className="title">SELİMİYE CAMİ</div>
+          <div className="title">SELİMİYE CAMİİ</div>
           <div className="explanation">
             Edirne’nin her yerinden tüm ihtişamı ile görülebilen, dört zarif
             minaresi, muhteşem kubbesi ile eşsiz bir yapı olan Selimiye Camii
@@ -22,7 +22,7 @@ function Tarihi() {
       </div>
       <div className="conteiner">
         <div className="conteiner-left">
-          <div className="title">SELİMİYE CAMİ</div>
+          <div className="title">SELİMİYE CAMİİ</div>
           <div className="explanation">
             Edirne’nin her yerinden tüm ihtişamı ile görülebilen, dört zarif
             minaresi, muhteşem kubbesi ile eşsiz bir yapı olan Selimiye Camii
