@@ -16,7 +16,7 @@ function Slider() {
     <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination, A11y, Autoplay]}
-      spaceBetween={50}
+      spaceBetween={0}
       slidesPerView={3}
       navigation={true}
       pagination={{ clickable: true }}
