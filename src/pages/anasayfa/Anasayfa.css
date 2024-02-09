@@ -1,20 +1,223 @@
 html {
-    scroll-snap-type: y proximity;
+  scroll-snap-type: y proximity;
 }
 
 section {
-    height: 100vh;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 .welcoming {
+  align-items: center;
+  height: 100vh;
+}
 
-  height: 100vh; /* 100% of the viewport height */
-  width: 100vw; /* 100% of the viewport width */
+.textWrap {
+  height: 100%;
+  width: min-content;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 2em; /* Adjust the font size as needed */
-  background-color: #f0f0f0; /* Set a background color if desired */
-  color: #333; /* Set text color if desired */
+  margin-left: auto;
+  margin-right: auto;
+}
+.wrapperTextEdirneKesfet {
+  margin-top: auto;
+}
+
+.wrapperStartDiscover {
+  margin-top: auto;
+  color: #fde7d9;
+}
+.wrapperStartDiscover img {
+  color: #fde7d9;
+}
+.downArrow {
+  width: 25px;
+  color: rgb(248, 234, 225);
+  cursor: pointer;
+}
+
+.downArrow:hover {
+  -webkit-animation: downArrow 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95)
+    infinite both;
+  animation: downArrow 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite both;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+
+@-webkit-keyframes downArrow {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes downArrow {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+}
+
+.startDiscover {
+  color: rgb(248, 234, 225);
+}
+
+.background-layer {
+  background: linear-gradient(
+      rgba(185, 129, 33, 0.584),
+      rgba(38, 158, 227, 0.285)
+    ),
+    url("../../images/horizontal-selimiye.jpg");
+  position: absolute;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.textEdirneKesfet {
+  width: 100%;
+  white-space: nowrap;
+  font-size: 13vw;
+  overflow: hidden;
+  -webkit-text-fill-color: #00000000;
+  -webkit-text-stroke: 2px rgb(248, 234, 225);
+  z-index: 2;
+  cursor: default;
+}
+.hovered {
+  -webkit-text-stroke: 0px rgb(255, 255, 255);
+  -webkit-text-fill-color: #fde7d9;
+}
+
+.textHosgeldiniz {
+  display: inline-block;
+  text-align: end;
+  width: 100%;
+  z-index: 2;
+  font-size: 4vw;
+  -webkit-text-fill-color: #e0a23e;
+  cursor: default;
+}
+
+.tracking-in-expand {
+  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.text-focus-in {
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+.slide-in-blurred-bottom {
+  -webkit-animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.86, 0, 0.07, 1)
+    both;
+  animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.86, 0, 0.07, 1) both;
+}
+
+@-webkit-keyframes slide-in-blurred-bottom {
+  0% {
+    -webkit-transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+    transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+    transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-blurred-bottom {
+  0% {
+    -webkit-transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+    transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+    transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
 }
