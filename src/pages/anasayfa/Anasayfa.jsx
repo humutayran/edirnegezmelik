@@ -1,11 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import "./Anasayfa.css";
 import { motion } from "framer-motion";
 
 function Anasayfa() {
-  const [isHovered, setHovered] = useState(false);
-  const handleHoverStart = () => setHovered(true);
-  const handleHoverEnd = () => setHovered(false);
+
 
   const sectionRefs = [useRef(), useRef(), useRef(), useRef()];
 
@@ -25,19 +23,11 @@ function Anasayfa() {
       <section ref={sectionRefs[0]} className="welcoming">
         <div className="background-layer"></div>
         <div className="textWrap">
-          <motion.div
-            className="wrapperTextEdirneKesfet"
-            onHoverStart={handleHoverStart}
-            onHoverEnd={handleHoverEnd}
-          >
-            <h1
-              className={`textEdirneKesfet text-focus-in ${
-                isHovered ? "hovered" : ""
-              }`}
-            >
+          <div className="wrapperTextEdirneKesfet">
+            <h1 className="textEdirneKesfet text-focus-in">
               Edirne Keşfet&#39;e
             </h1>
-          </motion.div>
+          </div>
           <motion.div className="wrapperTextHosgeldiniz">
             <motion.div
               style={{

@@ -100,11 +100,14 @@ section {
   -webkit-text-stroke: 2px rgb(248, 234, 225);
   z-index: 2;
   cursor: default;
+  transition: 0.3s;
 }
-.hovered {
-  -webkit-text-stroke: 0px rgb(255, 255, 255);
+
+.textEdirneKesfet:hover {
+  -webkit-text-stroke: 2px rgb(248, 234, 225);
   -webkit-text-fill-color: #fde7d9;
 }
+
 
 .textHosgeldiniz {
   display: inline-block;
