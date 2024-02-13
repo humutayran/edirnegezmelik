@@ -80,7 +80,7 @@ section {
       rgba(38, 158, 227, 0.285)
     ),
     url("../../images/horizontal-selimiye.jpg");
-  position: absolute;
+  position: fixed;
   background-position: center;
   width: 100%;
   height: 100%;
@@ -227,7 +227,6 @@ section {
 /* SECTION 2 SECTION 2 SECTION 2 SECTION 2 SECTION 2 SECTION 2 SECTION 2  */
 
 .section2Wrapper {
-  background-color: black;
   height: 100%;
-  margin: 100px;
+  padding: 100px;
 }

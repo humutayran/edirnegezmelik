@@ -1,8 +1,26 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./Anasayfa.css";
 import { motion } from "framer-motion";
 
 function Anasayfa() {
+  const [scrollOpacity, setScrollOpacity] = useState(1);
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const fullHeight = 2*sectionRefs[0].current.clientHeight;
+
+    const opacity = 1 - Math.min(scrollPosition / (fullHeight - windowHeight), 1);
+    setScrollOpacity(opacity);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
 
   const sectionRefs = [useRef(), useRef(), useRef(), useRef()];
@@ -21,7 +39,7 @@ function Anasayfa() {
   return (
     <div>
       <section ref={sectionRefs[0]} className="welcoming">
-        <div className="background-layer"></div>
+        <div className="background-layer" style={{opacity: scrollOpacity}}></div>
         <div className="textWrap">
           <div className="wrapperTextEdirneKesfet">
             <h1 className="textEdirneKesfet text-focus-in">
@@ -64,7 +82,9 @@ function Anasayfa() {
         </div>
       </section>
       <section ref={sectionRefs[1]}>
-        <div className="section2Wrapper"></div>
+        <div className="section2Wrapper">
+
+        </div>
       </section>
       <section ref={sectionRefs[2]} style={{ backgroundColor: "green" }}>
         <h1>HOŞGELDİNİZ 3</h1>
