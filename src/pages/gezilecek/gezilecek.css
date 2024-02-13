@@ -4,14 +4,14 @@
 		margin-right: auto;
 		height: auto;
 	}
-	.conteiner{
+	.container{
 		width: 100%;
 		margin-top: 50px;
 		float: left;
 		height: auto;
 		position: relative;
 	}
-	.conteiner-left{
+	.container-left{
 		width: 50%;
 		position: relative;
 		float: left;
@@ -51,7 +51,7 @@
 		color: white;
 		opacity:0.33;
 	}
-	.conteiner-right{
+	.container-right{
 		width: 50%;
 		float: left;
 		position: relative;
@@ -59,6 +59,6 @@
 		align-items: center;
 		justify-content: center;
 	}
-	.conteiner-right img{
+	.container-right img{
 		height: 300px;
 	}
