@@ -37,7 +37,7 @@ function Anasayfa() {
   };
 
   return (
-    <div>
+    <div className="sectionWrapper">
       <section ref={sectionRefs[0]} className="welcoming">
         <div className="background-layer" style={{opacity: scrollOpacity}}></div>
         <div className="textWrap">

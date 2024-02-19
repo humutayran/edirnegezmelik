@@ -1,4 +1,4 @@
-html {
+.sectionWrapper {
   scroll-snap-type: y proximity;
 }
 
