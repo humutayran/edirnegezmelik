@@ -1,5 +1,5 @@
 import React from "react";
-import "../icerik.css";
+import styles from "./Tarihi.module.css";
 import selimiye from "../../images/selimiye.jpg";
 import adaletKasri from "../../images/adaletkasri.jpg";
 import { motion } from "framer-motion";
@@ -16,11 +16,11 @@ function Tarihi() {
   const transition = { duration: 0.5, delay: 0.25 };
   const viewport = { once: true };
   return (
-    <div className="body">
-      <div className="container">
-        <div className="container-left">
+    <div className={styles.body}>
+      <div className={styles.container}>
+        <div className={styles.container_left}>
           <motion.div
-            className="title"
+            className={styles.title}
             variants={variantsTitle}
             initial="hidden"
             whileInView="visible"
@@ -36,17 +36,17 @@ function Tarihi() {
             viewport={viewport}
             transition={transition}
           >
-            <div className="explanation">
+            <div className={styles.explantion}>
               Edirne’nin her yerinden tüm ihtişamı ile görülebilen, dört zarif
               minaresi, muhteşem kubbesi ile eşsiz bir yapı olan Selimiye Camii
               dünya tarihinin ünlü mimarlarından birisi olan Mimar Sinan’ın
               eseridir.
             </div>
-            <button className="button">Daha Fazla</button>
+            <button className={styles.button}>Daha Fazla</button>
           </motion.div>
         </div>
         <motion.div
-          className="container-right"
+          className={styles.container_right}
           variants={variants}
           initial="hidden"
           whileInView="visible"
@@ -56,10 +56,10 @@ function Tarihi() {
           <img src={selimiye} />
         </motion.div>
       </div>
-      <div className="container">
-        <div className="container-left">
+      <div className={styles.container}>
+        <div className={styles.container_left}>
           <motion.div
-            className="title"
+            className={styles.title}
             variants={variantsTitle}
             initial="hidden"
             whileInView="visible"
@@ -75,12 +75,12 @@ function Tarihi() {
             viewport={viewport}
             transition={transition}
           >
-            <div className="explanation">dillerde tekbir AllahuEkber</div>
-            <button className="button">Daha Fazla</button>
+            <div className={styles.explantion}>dillerde tekbir AllahuEkber</div>
+            <button className={styles.button}>Daha Fazla</button>
           </motion.div>
         </div>
         <motion.div
-          className="container-right"
+          className={styles.container_right}
           variants={variants}
           initial="hidden"
           whileInView="visible"
@@ -90,10 +90,10 @@ function Tarihi() {
           <img src={adaletKasri} />
         </motion.div>
       </div>
-      <div className="container">
-        <div className="container-left">
+      <div className={styles.container}>
+        <div className={styles.container_left}>
           <motion.div
-            className="title"
+            className={styles.title}
             variants={variantsTitle}
             initial="hidden"
             whileInView="visible"
@@ -109,17 +109,17 @@ function Tarihi() {
             viewport={viewport}
             transition={transition}
           >
-            <div className="explanation">
+            <div className={styles.explantion}>
               Edirne’nin her yerinden tüm ihtişamı ile görülebilen, dört zarif
               minaresi, muhteşem kubbesi ile eşsiz bir yapı olan Selimiye Camii
               dünya tarihinin ünlü mimarlarından birisi olan Mimar Sinan’ın
               eseridir.
             </div>
-            <button className="button">Daha Fazla</button>
+            <button className={styles.button}>Daha Fazla</button>
           </motion.div>
         </div>
         <motion.div
-          className="container-right"
+          className={styles.container_right}
           variants={variants}
           initial="hidden"
           whileInView="visible"
@@ -129,10 +129,10 @@ function Tarihi() {
           <img src={selimiye} />
         </motion.div>
       </div>
-      <div className="container">
-        <div className="container-left">
+      <div className={styles.container}>
+        <div className={styles.container_left}>
           <motion.div
-            className="title"
+            className={styles.title}
             variants={variantsTitle}
             initial="hidden"
             whileInView="visible"
@@ -148,12 +148,12 @@ function Tarihi() {
             viewport={viewport}
             transition={transition}
           >
-            <div className="explanation">dillerde tekbir AllahuEkber</div>
-            <button className="button">Daha Fazla</button>
+            <div className={styles.explantion}>dillerde tekbir AllahuEkber</div>
+            <button className={styles.button}>Daha Fazla</button>
           </motion.div>
         </div>
         <motion.div
-          className="container-right"
+          className={styles.container_right}
           variants={variants}
           initial="hidden"
           whileInView="visible"

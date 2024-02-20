@@ -1,5 +1,6 @@
 html {
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
 }
 .body {
   width: 90%;
@@ -13,7 +14,7 @@ html {
   position: relative;
   height: 100vh;
 }
-.container-left {
+.container_left {
   width: 50%;
   position: absolute;
   top: 25%;
@@ -52,7 +53,7 @@ html {
   background-color: #e0a23e;
   color: white;
 }
-.container-right {
+.container_right {
   width: 50%;
   float: left;
   position: absolute;
@@ -60,7 +61,7 @@ html {
   left: 50%;
   margin-left: 2rem;
 }
-.container-right img {
+.container_right img {
   height: 325px;
   width: 100%;
 }

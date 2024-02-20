@@ -1,5 +1,5 @@
 import React from "react";
-import "../icerik.css";
+import styles from "./Gezilecek.module.css";
 import karaagac from "../../images/karaagac.jpg";
 import kentormani from "../../images/edirnekentormani.jpg";
 import { motion } from "framer-motion";
@@ -16,11 +16,11 @@ function Gezilecek() {
   const transition = { duration: 0.5, delay: 0.25 };
   const viewport = { once: true };
   return (
-    <div className="body">
-      <div className="container">
-        <div className="container-left">
+    <div className={styles.body}>
+      <div className={styles.container}>
+        <div className={styles.container_left}>
           <motion.div
-            className="title"
+            className={styles.title}
             variants={variantsTitle}
             initial="hidden"
             whileInView="visible"
@@ -36,16 +36,16 @@ function Gezilecek() {
             viewport={viewport}
             transition={transition}
           >
-            <div className="explanation">
+            <div className={styles.explanition}>
               Karaağaç, Edirne ilinin Merkez ilçesine bağlı bir mahalle.
               Karaağaç, Meriç nehrinin 2 km batısında, Yunanistan sınırına 4 km
               uzaklıktadır.
             </div>
-            <button className="button">Daha Fazla</button>
+            <button className={styles.button}>Daha Fazla</button>
           </motion.div>
         </div>
         <motion.div
-          className="container-right"
+          className={styles.container_right}
           variants={variants}
           initial="hidden"
           whileInView="visible"
@@ -55,10 +55,10 @@ function Gezilecek() {
           <img src={karaagac} />
         </motion.div>
       </div>
-      <div className="container">
-        <div className="container-left">
+      <div className={styles.container}>
+        <div className={styles.container_left}>
           <motion.div
-            className="title"
+            className={styles.title}
             variants={variantsTitle}
             initial="hidden"
             whileInView="visible"
@@ -74,15 +74,15 @@ function Gezilecek() {
             viewport={viewport}
             transition={transition}
           >
-            <div className="explanation">
+            <div className={styles.explanition}>
               İl merkezinin güney kesminde Edirne-Karaağaç yolu üzerinde kente 2
               kilometre mesafede olan bir mesire yeridir.
             </div>
-            <button className="button">Daha Fazla</button>
+            <button className={styles.button}>Daha Fazla</button>
           </motion.div>
         </div>
         <motion.div
-          className="container-right"
+          className={styles.container_right}
           variants={variants}
           initial="hidden"
           whileInView="visible"
@@ -92,10 +92,10 @@ function Gezilecek() {
           <img src={kentormani} />
         </motion.div>
       </div>
-      <div className="container">
-        <div className="container-left">
+      <div className={styles.container}>
+        <div className={styles.container_left}>
           <motion.div
-            className="title"
+            className={styles.title}
             variants={variantsTitle}
             initial="hidden"
             whileInView="visible"
@@ -111,16 +111,16 @@ function Gezilecek() {
             viewport={viewport}
             transition={transition}
           >
-            <div className="explanation">
+            <div className={styles.explanition}>
               Karaağaç, Edirne ilinin Merkez ilçesine bağlı bir mahalle.
               Karaağaç, Meriç nehrinin 2 km batısında, Yunanistan sınırına 4 km
               uzaklıktadır.
             </div>
-            <button className="button">Daha Fazla</button>
+            <button className={styles.button}>Daha Fazla</button>
           </motion.div>
         </div>
         <motion.div
-          className="container-right"
+          className={styles.container_right}
           variants={variants}
           initial="hidden"
           whileInView="visible"
@@ -130,10 +130,10 @@ function Gezilecek() {
           <img src={karaagac} />
         </motion.div>
       </div>
-      <div className="container">
-        <div className="container-left">
+      <div className={styles.container}>
+        <div className={styles.container_left}>
           <motion.div
-            className="title"
+            className={styles.title}
             variants={variantsTitle}
             initial="hidden"
             whileInView="visible"
@@ -149,15 +149,15 @@ function Gezilecek() {
             viewport={viewport}
             transition={transition}
           >
-            <div className="explanation">
+            <div className={styles.explanition}>
               İl merkezinin güney kesminde Edirne-Karaağaç yolu üzerinde kente 2
               kilometre mesafede olan bir mesire yeridir.
             </div>
-            <button className="button">Daha Fazla</button>
+            <button className={styles.button}>Daha Fazla</button>
           </motion.div>
         </div>
         <motion.div
-          className="container-right"
+          className={styles.container_right}
           variants={variants}
           initial="hidden"
           whileInView="visible"
