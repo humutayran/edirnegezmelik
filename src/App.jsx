@@ -12,8 +12,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/anasayfa" />} />
           <Route path="/anasayfa" element={<Anasayfa />} />
+          <Route path="/gezilecekk" element={<Navigate to="/gezilecek" />} />
           <Route path="/gezilecek" element={<Gezilecek />} />
+          <Route path="/tarih" element={<Navigate to="/tarihi" />} />
           <Route path="/tarihi" element={<Tarihi />} />
+          <Route path="/plann" element={<Navigate to="/plan" />} />
           <Route path="/plan" element={<Plan />} />
         </Routes>
       </BrowserRouter>

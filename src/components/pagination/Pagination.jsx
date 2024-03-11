@@ -29,27 +29,3 @@ function Pagination() {
 }
 
 export default Pagination;
-{/* <div className="pagination-item">
-                <Link className="item" to="#">1
-                </Link></div>
-            <div className="pagination-item">
-                <Link className="item" to="#">2
-                </Link ></div>
-            <div className="pagination-item">
-                <Link className="item" to="#">3
-                </Link></div>
-            <div className="pagination-item">
-                <Link className="item" to="#">4
-                </Link></div>
-            <div className="pagination-item">
-                <Link className="item" to="#">5
-                </Link></div>
-            <div className="pagination-item">
-                <Link className="item" to="#">6
-                </Link></div>
-            <div className="pagination-item">
-                <Link className="item" to="#">7
-                </Link></div>
-            <div className="pagination-item">
-                <Link className="item" to="#">8
-                </Link></div> */}

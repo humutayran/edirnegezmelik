@@ -3,6 +3,7 @@ import styles from "./Gezilecek.module.css";
 import karaagac from "../../images/karaagac.jpg";
 import kentormani from "../../images/edirnekentormani.jpg";
 import { motion } from "framer-motion";
+import { Pagination } from "../../components";
 
 function Gezilecek() {
   const variantsTitle = {
@@ -167,6 +168,7 @@ function Gezilecek() {
           <img src={kentormani} />
         </motion.div>
       </div>
+      <Pagination />
     </div>
   );
 }

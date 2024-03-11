@@ -59,7 +59,7 @@ a.link:hover:after {
   width: 100%;
 }
 
-.active::after{
+.active:after{
   content: "";
   display: block;
   height: 1.5px;
