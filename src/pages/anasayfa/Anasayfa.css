@@ -49,8 +49,8 @@ section {
     transform: translateY(0);
   }
   50% {
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
+    -webkit-transform: translateY(-13px);
+    transform: translateY(-13px);
   }
 }
 
@@ -61,8 +61,8 @@ section {
     transform: translateY(0);
   }
   50% {
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
+    -webkit-transform: translateY(-13px);
+    transform: translateY(-13px);
   }
 }
 

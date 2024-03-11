@@ -35,31 +35,32 @@ function Miavbar() {
   return (
     <div id="navbar" className="navbar">
       <div className="navbar-links">
-        <div className="navbar-links_container">
-          {navLinks.map((link, i) => (
-            <div key={link.text} onClick={() => setActive(link.text)} style={{display: "flex", alignItems: "center"}}>
-              <Link
-                className={
-                  isActive === link.text ? "link active" : "link inactive"
-                }
-                to={link.path}
+        {navLinks.map((link, i) => (
+          <div
+            key={link.text}
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            <Link
+              onClick={() => setActive(link.text)}
+              className={
+                isActive === link.text ? "link active" : "link inactive"
+              }
+              to={link.path}
+            >
+              {link.text}
+            </Link>
+            {i === 1 && (
+              <div
+                key={isActive}
+                className="navbar-links_logo link rotate-center"
               >
-                {link.text}
-              </Link>
-              {i === 1 && (
-                <div
-                  key={isActive}
-                  className="navbar-links_logo link rotate-center"
-                  onClick={() => setActive("anaSayfa")}
-                >
-                  <Link to="/">
-                    <img src={logo} alt="logo"></img>
-                  </Link>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+                <Link to="/" onClick={() => setActive("anaSayfa")}>
+                  <img src={logo} alt="logo"></img>
+                </Link>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
