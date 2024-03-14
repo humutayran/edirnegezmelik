@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./app.css";
 import React from "react";
-import { Anasayfa, Gezilecek, Tarihi,Plan } from "./pages";
+import { Anasayfa, Gezilecek, Tarihi, Plan } from "./pages";
 import { Navbar } from "./components";
 
 function App() {

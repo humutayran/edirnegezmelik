@@ -60,10 +60,10 @@ a.text:hover {
   color: #e0a23e;
 }
 .disabled {
-    color: gray;
-    cursor: not-allowed;
-    text-decoration: none;
+  color: gray;
+  cursor: not-allowed;
+  text-decoration: none;
 }
-.activee{
+.activee {
   background-color: #e0a23e;
 }
