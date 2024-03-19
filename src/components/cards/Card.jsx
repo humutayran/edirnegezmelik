@@ -1,19 +1,53 @@
 import api from "../../apiConnection/ApiConnection";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Card.module.css";
 
 const fetchData = async (url) => {
   try {
     const response = await api.get(url);
-    return response.data; // or do something with the response
+    return response.data;
   } catch (err) {
     console.log(err);
-    throw err; // rethrowing the error for handling outside of fetchData
+    throw err;
   }
 };
 
-const Card = (artworks) => {
+const fetchImage = async (imageName) => {
+  try {
+    const response = await api.get(`/images/${imageName}`, { responseType: 'blob' });
+    return response.data; // Assuming response.data is the image itself
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+};
+
+
+const card = (artworks) => {
+  const [images, setImages] = useState({});
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      const imagePromises = artworks.map((artwork) =>
+        fetchImage(artwork.fileDataList[0].name)
+      );
+      Promise.all(imagePromises)
+        .then((imageDataArray) => {
+          const imagesData = {};
+          imageDataArray.forEach((imageData, index) => {
+            imagesData[index] = URL.createObjectURL(imageData); // Assuming imageData is a Blob or File
+          });
+          setImages(imagesData);
+        })
+        .catch((error) => {
+          console.error("Error fetching images: ", error);
+        });
+    };
+
+    fetchImages();
+  }, [artworks]);
+
   const variantsTitle = {
     hidden: { opacity: 0, x: -25 },
     visible: { opacity: 1, x: 0 },
@@ -26,6 +60,7 @@ const Card = (artworks) => {
 
   const transition = { duration: 0.5, delay: 0.25 };
   const viewport = { once: true };
+
   return (
     <div className={styles.body}>
       {artworks.map((artwork, index) => (
@@ -48,7 +83,7 @@ const Card = (artworks) => {
               viewport={viewport}
               transition={transition}
             >
-              <div className={styles.explantion}>{artwork.content}</div>
+              <div className={styles.explanation}>{artwork.content}</div>
               <button className={styles.button}>Daha Fazla</button>
             </motion.div>
           </div>
@@ -60,7 +95,7 @@ const Card = (artworks) => {
             viewport={viewport}
             transition={transition}
           >
-            <img src={artwork.image} alt={artwork.title} />
+            <img src={images[index]} alt={artwork.title} />
           </motion.div>
         </div>
       ))}
@@ -68,4 +103,4 @@ const Card = (artworks) => {
   );
 };
 
-export {fetchData, Card};
+export { fetchData, card };
