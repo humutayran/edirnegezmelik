@@ -60,4 +60,6 @@
 .container_right img {
   height: 325px;
   width: 100%;
+  object-fit: contain;
+  border-radius: 20px;
 }

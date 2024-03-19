@@ -1,6 +1,7 @@
 import "./Pagination.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
 function Pagination() {
     const pages =5;
     const numOfpages = [];

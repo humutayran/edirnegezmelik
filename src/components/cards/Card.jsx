@@ -2,6 +2,7 @@ import api from "../../apiConnection/ApiConnection";
 import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import styles from "./Card.module.css";
+import Pagination from "../pagination/Pagination";
 
 const fetchData = async (url) => {
   try {
@@ -15,14 +16,15 @@ const fetchData = async (url) => {
 
 const fetchImage = async (imageName) => {
   try {
-    const response = await api.get(`/images/${imageName}`, { responseType: 'blob' });
+    const response = await api.get(`/images/${imageName}`, {
+      responseType: "blob",
+    });
     return response.data; // Assuming response.data is the image itself
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
-
 
 const card = (artworks) => {
   const [images, setImages] = useState({});
@@ -36,7 +38,7 @@ const card = (artworks) => {
         .then((imageDataArray) => {
           const imagesData = {};
           imageDataArray.forEach((imageData, index) => {
-            imagesData[index] = URL.createObjectURL(imageData); // Assuming imageData is a Blob or File
+            imagesData[index] = URL.createObjectURL(imageData);
           });
           setImages(imagesData);
         })
@@ -95,10 +97,13 @@ const card = (artworks) => {
             viewport={viewport}
             transition={transition}
           >
-            <img src={images[index]} alt={artwork.title} />
+            <div className="image_container">
+              <img src={images[index]} alt={artwork.title} />
+            </div>
           </motion.div>
         </div>
       ))}
+      <Pagination />
     </div>
   );
 };
