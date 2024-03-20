@@ -1,6 +1,7 @@
 import "./Pagination.css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 function Pagination() {
   const pages = 10;
   const numOfpages = [];
