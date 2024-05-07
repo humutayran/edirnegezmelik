@@ -1,16 +1,18 @@
 .body {
+  width: 100%;
+  background: url("../../images/pattern.webp")
+}
+.container {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-}
-.container {
-  width: 100%;
   scroll-snap-align: center;
   scroll-snap-stop: always;
   position: relative;
   height: 100vh;
 }
 .container_left {
+  background-color: rgba(255,255,255,0.7);
   width: 50%;
   position: absolute;
   top: 25%;
@@ -19,6 +21,10 @@
   flex-direction: column;
   height: 325px;
   content: " ";
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .title {
   width: 100%;
@@ -26,6 +32,8 @@
   color: black;
   font-size: 50px;
   font-family: Garamond, serif;
+  padding-left: 5%;
+  padding-top: 3%;
 }
 .explanation {
   color: black;
@@ -33,9 +41,11 @@
   width: 100%;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
+  padding-left: 5%;
 }
 .button {
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
+  margin-left: 5%;
   background-color: rgba(198, 137, 32, 0.9);
   border: 2px;
   border-radius: 25px;
@@ -53,6 +63,7 @@
   color: white;
 }
 .container_right {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   width: 50%;
   float: left;
   position: absolute;
