@@ -98,7 +98,7 @@ const card = (artworks) => {
             viewport={viewport}
             transition={transition}
           >
-            <div className="image_container">
+            <div className={styles.image_container}>
               <img src={images[index]} alt={artwork.title} />
             </div>
           </motion.div>

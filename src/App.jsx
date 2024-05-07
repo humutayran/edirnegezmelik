@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./app.css";
 import React from "react";
-import { Anasayfa, Gezilecek, Tarihi, Plan } from "./pages";
+import { Anasayfa, Gezilecek, Tarihi, Plan, Icerik } from "./pages";
 import { Navbar } from "./components";
 
 function App() {
@@ -18,6 +18,8 @@ function App() {
           <Route path="/tarihi" element={<Tarihi />} />
           <Route path="/plann" element={<Navigate to="/plan" />} />
           <Route path="/plan" element={<Plan />} />
+          <Route path="/icerikk" element={<Navigate to="/icerik" />} />
+          <Route path="/icerik" element={<Icerik />} />
         </Routes>
       </BrowserRouter>
     </div>
