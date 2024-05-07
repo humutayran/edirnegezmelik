@@ -32,7 +32,7 @@ const card = (artworks) => {
   useEffect(() => {
     const fetchImages = async () => {
       const imagePromises = artworks.map((artwork) =>
-        fetchImage(artwork.fileDataList[0].name)
+        fetchImage(artwork.fileData[0].name)
       );
       Promise.all(imagePromises)
         .then((imageDataArray) => {
@@ -84,6 +84,7 @@ const card = (artworks) => {
               whileInView="visible"
               viewport={viewport}
               transition={transition}
+              style={{display:"flex", flexDirection:"column"}}
             >
               <div className={styles.explanation}>{artwork.content}</div>
               <button className={styles.button}>Daha Fazla</button>

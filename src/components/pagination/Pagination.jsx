@@ -1,7 +1,6 @@
 import "./Pagination.css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 function Pagination() {
   const pages = 10;
   const numOfpages = [];
@@ -12,7 +11,6 @@ function Pagination() {
   const [arrOfCurrentPage, setarrOfCurrentPage] = useState([]);
 
   useEffect(() => {
-    /*numOfpages dizisini tempNumOfpage dizisine kopyalıyor*/
     let tempNumOfpage = [...arrOfCurrentPage];
     let dotsInitial = '...';
     let dotsLeft = '... ';
@@ -21,7 +19,7 @@ function Pagination() {
       tempNumOfpage = [1, 2, 3, 4, dotsInitial, numOfpages.length];
     } 
     else if (currentPage === 4) {
-      const sliced = numOfpages.slice(0, 5);
+      const sliced = numOfpages.slice(0, 4);
       tempNumOfpage = [...sliced, dotsInitial, numOfpages.length];
     } 
     else if (currentPage > 4 && currentPage < numOfpages.length - 2) {
