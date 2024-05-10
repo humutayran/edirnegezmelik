@@ -5,10 +5,10 @@ import logo from "../../images/mercedesLogo.png";
 import { Link } from "react-router-dom";
 
 const navLinks = [
-  { text: "Ana Sayfa", path: "/" },
-  { text: "Gezilecek Yerler", path: "/gezilecekk" },
-  { text: "Tarihi Yerler", path: "/tarih" },
-  { text: "Gezi Planı", path: "/plann" },
+  { text: "Ana Sayfa", path: "/anasayfa" },
+  { text: "Gezilecek Yerler", path: "/gezilecek" },
+  { text: "Tarihi Yerler", path: "/tarihi" },
+  { text: "Gezi Planı", path: "/plan" },
 ];
 
 function Miavbar() {

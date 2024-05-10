@@ -1,8 +1,9 @@
 import api from "../../apiConnection/ApiConnection";
 import { motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./Card.module.css";
 import Pagination from "../pagination/Pagination";
+import { useNavigate } from "react-router-dom";
 
 const fetchData = async (url) => {
   try {
@@ -14,40 +15,18 @@ const fetchData = async (url) => {
   }
 };
 
-// const fetchImage = async (imageName) => {
-//   try {
-//     const response = await api.get(`/files/${imageName}`, {
-//     });
-//     return response.data; // Assuming response.data is the image itself
-//   } catch (err) {
-//     console.log(err);
-//     throw err;
-//   }
-// };
+const imageUrl = (artwork) => {
+  const imageSrc = artwork.fileData[0].name;
+  console.log("sdafasdf")
+  return "http://localhost:8080/files/" + imageSrc;
+}
 
 const card = (artworks) => {
-  // // const [images, setImages] = useState({});
-  //
-  // useEffect(() => {
-  //   const fetchImages = async () => {
-  //     const imagePromises = artworks.map((artwork) =>
-  //       fetchImage(artwork.fileData[0].name)
-  //     );
-  //     Promise.all(imagePromises)
-  //       .then((imageDataArray) => {
-  //         const imagesData = {};
-  //         imageDataArray.forEach((imageData, index) => {
-  //           imagesData[index] = URL.createObjectURL(imageData);
-  //         });
-  //         // setImages(imagesData);
-  //       })
-  //       .catch((error) => {
-  //         console.error("Error fetching images: ", error);
-  //       });
-  //   };
-  //
-    // fetchImages();
+  const navigate = useNavigate();
 
+  const btnNavigation = (title, content) => {
+  navigate('/icerik', { state: { title, content } }); // Pass title and content as state to the 'icerik' page
+}
 
   const variantsTitle = {
     hidden: { opacity: 0, x: -25 },
@@ -86,7 +65,7 @@ const card = (artworks) => {
               style={{display:"flex", flexDirection:"column"}}
             >
               <div className={styles.explanation}>{artwork.content}</div>
-              <button className={styles.button}>Daha Fazla</button>
+              <button className={styles.button} onClick={() => btnNavigation(artwork.title, artwork.content)}>Daha Fazla</button>
             </motion.div>
           </div>
           <motion.div
@@ -107,11 +86,5 @@ const card = (artworks) => {
     </div>
   );
 };
-
-const imageUrl = (artwork) => {
-  const imageSrc = artwork.fileData[0].name;
-  console.log("sdafasdf")
-  return "http://localhost:8080/files/" + imageSrc;
-}
 
 export { fetchData, card };
