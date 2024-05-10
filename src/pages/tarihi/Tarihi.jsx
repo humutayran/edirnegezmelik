@@ -6,7 +6,7 @@ function Tarihi() {
   useEffect(() => {
     async function getData() {
       try {
-        const data = await fetchData("/artworks").then(console.log(fetchData("/artworks")));
+        const data = await fetchData("/artworks");
         setArtworks(data);
       } catch (error) {
         console.error("Error fetching data: ", error);
