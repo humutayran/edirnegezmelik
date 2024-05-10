@@ -14,41 +14,40 @@ const fetchData = async (url) => {
   }
 };
 
-const fetchImage = async (imageName) => {
-  try {
-    const response = await api.get(`/images/${imageName}`, {
-      responseType: "blob",
-    });
-    return response.data; // Assuming response.data is the image itself
-  } catch (err) {
-    console.log(err);
-    throw err;
-  }
-};
+// const fetchImage = async (imageName) => {
+//   try {
+//     const response = await api.get(`/files/${imageName}`, {
+//     });
+//     return response.data; // Assuming response.data is the image itself
+//   } catch (err) {
+//     console.log(err);
+//     throw err;
+//   }
+// };
 
 const card = (artworks) => {
-  const [images, setImages] = useState({});
+  // // const [images, setImages] = useState({});
+  //
+  // useEffect(() => {
+  //   const fetchImages = async () => {
+  //     const imagePromises = artworks.map((artwork) =>
+  //       fetchImage(artwork.fileData[0].name)
+  //     );
+  //     Promise.all(imagePromises)
+  //       .then((imageDataArray) => {
+  //         const imagesData = {};
+  //         imageDataArray.forEach((imageData, index) => {
+  //           imagesData[index] = URL.createObjectURL(imageData);
+  //         });
+  //         // setImages(imagesData);
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error fetching images: ", error);
+  //       });
+  //   };
+  //
+    // fetchImages();
 
-  useEffect(() => {
-    const fetchImages = async () => {
-      const imagePromises = artworks.map((artwork) =>
-        fetchImage(artwork.fileData[0].name)
-      );
-      Promise.all(imagePromises)
-        .then((imageDataArray) => {
-          const imagesData = {};
-          imageDataArray.forEach((imageData, index) => {
-            imagesData[index] = URL.createObjectURL(imageData);
-          });
-          setImages(imagesData);
-        })
-        .catch((error) => {
-          console.error("Error fetching images: ", error);
-        });
-    };
-
-    fetchImages();
-  }, [artworks]);
 
   const variantsTitle = {
     hidden: { opacity: 0, x: -25 },
@@ -99,7 +98,7 @@ const card = (artworks) => {
             transition={transition}
           >
             <div className={styles.image_container}>
-              <img src={images[index]} alt={artwork.title} />
+              <img src={imageUrl(artwork)} alt={artwork.title} />
             </div>
           </motion.div>
         </div>
@@ -108,5 +107,11 @@ const card = (artworks) => {
     </div>
   );
 };
+
+const imageUrl = (artwork) => {
+  const imageSrc = artwork.fileData[0].name;
+  console.log("sdafasdf")
+  return "http://localhost:8080/files/" + imageSrc;
+}
 
 export { fetchData, card };
