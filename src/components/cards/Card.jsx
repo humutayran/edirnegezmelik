@@ -17,16 +17,15 @@ const fetchData = async (url) => {
 
 const imageUrl = (artwork) => {
   const imageSrc = artwork.fileData[0].name;
-  console.log("sdafasdf")
   return "http://localhost:8080/files/" + imageSrc;
-}
+};
 
-const card = (artworks) => {
+const card = (artworks, category) => {
   const navigate = useNavigate();
 
-  const btnNavigation = (title, content) => {
-  navigate('/icerik', { state: { title, content } }); // Pass title and content as state to the 'icerik' page
-}
+  const btnNavigation = (id) => {
+    navigate('/icerik', { state: { id, category } }); // Pass id, title, and content as state to the 'icerik' page
+  };
 
   const variantsTitle = {
     hidden: { opacity: 0, x: -25 },
@@ -64,8 +63,8 @@ const card = (artworks) => {
               transition={transition}
               style={{display:"flex", flexDirection:"column"}}
             >
-              <div className={styles.explanation}>{artwork.content}</div>
-              <button className={styles.button} onClick={() => btnNavigation(artwork.title, artwork.content)}>Daha Fazla</button>
+              <div className={styles.explanation}>{artwork.description}</div>
+              <button className={styles.button} onClick={() => btnNavigation(artwork.id, category)}>Daha Fazla</button>
             </motion.div>
           </div>
           <motion.div
@@ -88,3 +87,4 @@ const card = (artworks) => {
 };
 
 export { fetchData, card };
+

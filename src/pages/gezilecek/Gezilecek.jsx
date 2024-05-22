@@ -6,7 +6,7 @@ function Gezilecek() {
   useEffect(() => {
     async function getData() {
       try {
-        const data = await fetchData("/artworks");
+        const data = await fetchData("/touristic-spots");
         setArtworks(data);
       } catch (error) {
         console.error("Error fetching data: ", error);
@@ -15,7 +15,7 @@ function Gezilecek() {
 
     getData();
   }, []);
-  return card(artworks);
+  return card(artworks, "touristic-spots");
 }
 
 export default Gezilecek;

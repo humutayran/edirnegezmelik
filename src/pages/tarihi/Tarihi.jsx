@@ -15,7 +15,7 @@ function Tarihi() {
 
     getData();
   }, []);
-  return card(artworks);
+  return card(artworks, "artworks");
 }
 
 export default Tarihi;

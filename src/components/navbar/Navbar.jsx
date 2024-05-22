@@ -5,7 +5,7 @@ import logo from "../../images/mercedesLogo.png";
 import { Link } from "react-router-dom";
 
 const navLinks = [
-  { text: "Ana Sayfa", path: "/anasayfa" },
+  { text: "Ana Sayfa", path: "/" },
   { text: "Gezilecek Yerler", path: "/gezilecek" },
   { text: "Tarihi Yerler", path: "/tarihi" },
   { text: "Gezi Planı", path: "/plan" },
