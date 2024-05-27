@@ -87,12 +87,6 @@ function Anasayfa() {
       <section ref={sectionRefs[1]}>
         <div className="section2Wrapper"></div>
       </section>
-      <section ref={sectionRefs[2]} style={{ backgroundColor: "green" }}>
-        <h1>HOŞGELDİNİZ 3</h1>
-      </section>
-      <section ref={sectionRefs[3]} style={{ backgroundColor: "yellow" }}>
-        <h1>HOŞGELDİNİZ 4</h1>
-      </section>
     </div>
   );
 }
