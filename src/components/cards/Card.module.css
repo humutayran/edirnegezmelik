@@ -46,9 +46,9 @@
 .button {
   margin-top: 5rem;
   margin-left: 5%;
-  background-color: rgba(198, 137, 32, 0.9);
-  border: 2px;
+  background-color: transparent;
   border-radius: 25px;
+  border-color: green;
   display: inline-block;
   cursor: pointer;
   width: 30%;
@@ -57,9 +57,10 @@
   color: black;
   text-align: center;
   text-decoration: none;
+  transition-duration: 0.4s;
 }
 .button:hover {
-  background-color: #e0a23e;
+  background-color: green;
   color: white;
 }
 .container_right {
