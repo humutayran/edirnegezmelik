@@ -85,7 +85,9 @@ function Anasayfa() {
         </div>
       </section>
       <section ref={sectionRefs[1]}>
-        <div className="section2Wrapper"></div>
+        <div className="section2Wrapper">
+
+        </div>
       </section>
     </div>
   );

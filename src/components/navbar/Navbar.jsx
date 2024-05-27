@@ -14,6 +14,7 @@ const navLinks = [
 function Miavbar() {
   const [isActive, setActive] = useState("anaSayfa");
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [rotate, setRotate] = useState(false);
 
   const controlNavbar = () => {
     if (lastScrollY < window.scrollY) {
@@ -32,34 +33,39 @@ function Miavbar() {
     };
   }, [lastScrollY]);
 
+  const handleLinkClick = (text) => {
+    setActive(text);
+    setRotate(true);
+    setTimeout(() => setRotate(false), 600); // Reset rotate after animation duration
+  };
+
   return (
     <div id="navbar" className="navbar">
       <div className="navbar-links">
-        {navLinks.map((link, i) => (
-          <div
+        {navLinks.slice(0, 2).map((link) => (
+          <Link
             key={link.text}
-            style={{ display: "flex", alignItems: "center" }}
+            onClick={() => handleLinkClick(link.text)}
+            className={isActive === link.text ? "link active" : "link inactive"}
+            to={link.path}
           >
-            <Link
-              onClick={() => setActive(link.text)}
-              className={
-                isActive === link.text ? "link active" : "link inactive"
-              }
-              to={link.path}
-            >
-              {link.text}
-            </Link>
-            {i === 1 && (
-              <div
-                key={isActive}
-                className="navbar-links_logo link rotate-center"
-              >
-                <Link to="/" onClick={() => setActive("anaSayfa")}>
-                  <img src={logo} alt="logo"></img>
-                </Link>
-              </div>
-            )}
-          </div>
+            {link.text}
+          </Link>
+        ))}
+        <div className={`navbar-logo ${rotate ? "rotate-center" : ""}`}>
+          <Link to="/" onClick={() => handleLinkClick("anaSayfa")}>
+            <img src={logo} alt="logo" />
+          </Link>
+        </div>
+        {navLinks.slice(2).map((link) => (
+          <Link
+            key={link.text}
+            onClick={() => handleLinkClick(link.text)}
+            className={isActive === link.text ? "link active" : "link inactive"}
+            to={link.path}
+          >
+            {link.text}
+          </Link>
         ))}
       </div>
     </div>
