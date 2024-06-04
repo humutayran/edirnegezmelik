@@ -1,102 +1,37 @@
 import "./Pagination.css";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-function Pagination() {
-  const pages = 10;
-  const numOfpages = [];
-  for (let i = 1; i <= pages; i++) {
-    numOfpages.push(i);
-  }
-  const [currentPage, setcurrentPage] = useState(1);
-  const [arrOfCurrentPage, setarrOfCurrentPage] = useState([]);
+import PropTypes from "prop-types";
 
-  useEffect(() => {
-    let tempNumOfpage = [...arrOfCurrentPage];
-    let dotsInitial = '...';
-    let dotsLeft = '... ';
-    let dotsRight = ' ...';
-    if (currentPage >= 1 && currentPage <= 3) {
-      tempNumOfpage = [1, 2, 3, 4, dotsInitial, numOfpages.length];
-    } 
-    else if (currentPage === 4) {
-      const sliced = numOfpages.slice(0, 4);
-      tempNumOfpage = [...sliced, dotsInitial, numOfpages.length];
-    } 
-    else if (currentPage > 4 && currentPage < numOfpages.length - 2) {
-      const sliced1 = numOfpages.slice(currentPage - 2, currentPage);
-      const sliced2 = numOfpages.slice(currentPage, currentPage + 1);
-      tempNumOfpage = [
-        1,
-        dotsLeft,
-        ...sliced1,
-        ...sliced2,
-        dotsRight,
-        numOfpages.length,
-      ];
-    } 
-    else if (currentPage > numOfpages.length - 3) {
-      const sliced = numOfpages.slice(numOfpages.length - 4);
-      tempNumOfpage = [1, dotsLeft, ...sliced];
-    } 
-    else if (currentPage === dotsInitial) {
-      setcurrentPage(arrOfCurrentPage[arrOfCurrentPage.length - 3] + 1);
-    } 
-    else if (currentPage === dotsRight) {
-      setcurrentPage(arrOfCurrentPage[3] + 2);
-    } 
-    else if (currentPage === dotsLeft) {
-      setcurrentPage(arrOfCurrentPage[3] - 2);
-    }
-    setarrOfCurrentPage(tempNumOfpage);
-  }, [currentPage]);
+function Pagination({ currentPage, totalPages, onPageChange }) {
+  const numOfpages = Array.from({ length: totalPages }, (_, i) => i + 1);
+
   return (
     <div className="pagination">
-      <div
-        className="pagination-prev"
-      >
+      <div className="pagination-prev">
         <Link
-          className={
-            currentPage === 1 ? "text disabled" : "text"
-          }
+          className={currentPage === 1 ? "text disabled" : "text"}
           to="#!"
-          onClick={() =>
-            setcurrentPage((prev) => (prev === 1 ? prev : prev - 1))
-          }
+          onClick={() => onPageChange(currentPage === 1 ? currentPage : currentPage - 1)}
         >
           Önceki
         </Link>
       </div>
-      {arrOfCurrentPage.map((page, index) => {
-        return (
-          <div
-            key={index}
-            className={
-              currentPage === page
-                ? "pagination-item activee"
-                : "pagination-item"
-            }
-          >
-            <Link className="item" to="#!" onClick={() => setcurrentPage(page)}>
-              {page}
-            </Link>
-          </div>
-        );
-      })}
-      <div
-        className={
-          currentPage === numOfpages.length
-            ? "pagination-next"
-            : "pagination-next"
-        }
-      >
+      {numOfpages.map((page, index) => (
+        <div
+          key={index}
+          className={currentPage === page ? "pagination-item activee" : "pagination-item"}
+        >
+          <Link className="item" to="#!" onClick={() => onPageChange(page)}>
+            {page}
+          </Link>
+        </div>
+      ))}
+      <div className="pagination-next">
         <Link
           className="text"
           to="#!"
-          onClick={() =>
-            setcurrentPage((next) =>
-              next === numOfpages.length ? next : next + 1
-            )
-          }
+          onClick={() => onPageChange(currentPage === numOfpages.length ? currentPage : currentPage + 1)}
         >
           Sonraki
         </Link>
@@ -105,4 +40,11 @@ function Pagination() {
   );
 }
 
+Pagination.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+  totalPages: PropTypes.number.isRequired,
+  onPageChange: PropTypes.func.isRequired,
+};
+
 export default Pagination;
+

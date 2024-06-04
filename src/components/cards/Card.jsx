@@ -2,7 +2,6 @@ import api from "../../apiConnection/ApiConnection";
 import { motion } from "framer-motion";
 import React from "react";
 import styles from "./Card.module.css";
-import Pagination from "../pagination/Pagination";
 import { useNavigate } from "react-router-dom";
 
 const fetchData = async (url) => {
@@ -81,7 +80,6 @@ const card = (artworks, category) => {
           </motion.div>
         </div>
       ))}
-      <Pagination />
     </div>
   );
 };
