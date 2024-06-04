@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./Anasayfa.css";
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 
 function Anasayfa() {
   const [scrollOpacity, setScrollOpacity] = useState(1);
@@ -11,7 +12,7 @@ function Anasayfa() {
     const fullHeight = 2 * sectionRefs[0].current.clientHeight;
 
     const opacity =
-      1 - Math.min(scrollPosition / (fullHeight - windowHeight), 1);
+      1 - Math.min(scrollPosition * 1.75 / (fullHeight - windowHeight), 1);
     setScrollOpacity(opacity);
   };
 
@@ -38,11 +39,11 @@ function Anasayfa() {
 
   return (
     <div className="sectionWrapper">
+      <div
+        className="background-layer"
+        style={{ opacity: scrollOpacity }}
+      ></div>
       <section ref={sectionRefs[0]} className="welcoming">
-        <div
-          className="background-layer"
-          style={{ opacity: scrollOpacity }}
-        ></div>
         <div className="textWrap">
           <div className="wrapperTextEdirneKesfet">
             <h1 className="textEdirneKesfet text-focus-in">
@@ -86,7 +87,12 @@ function Anasayfa() {
       </section>
       <section ref={sectionRefs[1]}>
         <div className="section2Wrapper">
-
+          <div className="geziPlaniContainer">
+            <div className="geziPlani">
+              <h1 className="title">Gezi Planlarımıza Göz Atın!</h1>
+              <h2 className="explanation">Edirne&#39;de keşfedilecek pek çok harika yer var! Sizin için özenle seçip derlediğimiz gezi planları, Edirne&#39;nin zengin tarihini, kültürünü ve doğal güzelliklerini keşfetmenizi sağlayacak. Seyahat sürenize ve ilgi alanlarınıza göre özelleştirilmiş bu planlardan size en uygun olanı seçin ve Edirne&#39;yi keşfetmeye hemen başlayın. Gezi planlarına <Link to="/plan">buradan</Link> veya üst kısımda bulunan menüden ulaşabilirsiniz.</h2>
+            </div>
+          </div>
         </div>
       </section>
     </div>
