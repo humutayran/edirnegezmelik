@@ -1,11 +1,15 @@
-import { useEffect, useState, React } from "react";
+import React,{ useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { fetchData, card } from "../../components/cards/Card";
 import Pagination from "../../components/pagination/Pagination";
 
 function Tarihi() {
   const [artworks, setArtworks] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const query = new URLSearchParams(location.search);
+  const currentPage = parseInt(query.get("page") || "1");
 
   useEffect(() => {
     async function getData() {
@@ -21,17 +25,20 @@ function Tarihi() {
     getData();
   }, [currentPage]);
 
+  const handlePageChange = (page) => {
+    navigate(`?page=${page}`);
+  };
+
   return (
     <div>
       {card(artworks, "artworks")}
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
-        onPageChange={setCurrentPage}
+        onPageChange={handlePageChange}
       />
     </div>
   );
 }
 
 export default Tarihi;
-

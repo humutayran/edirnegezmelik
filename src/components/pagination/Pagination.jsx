@@ -1,40 +1,49 @@
 import "./Pagination.css";
 import React from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Pagination({ currentPage, totalPages, onPageChange }) {
-  const numOfpages = Array.from({ length: totalPages }, (_, i) => i + 1);
+  const numOfPages = Array.from({ length: totalPages }, (_, i) => i + 1);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const query = new URLSearchParams(location.search);
+
+  const handlePageChange = (page) => {
+    query.set("page", page);
+    navigate(`${location.pathname}?${query.toString()}`);
+    onPageChange(page);
+  };
 
   return (
     <div className="pagination">
       <div className="pagination-prev">
-        <Link
+        <button
           className={currentPage === 1 ? "text disabled" : "text"}
-          to="#!"
-          onClick={() => onPageChange(currentPage === 1 ? currentPage : currentPage - 1)}
+          disabled={currentPage === 1}
+          onClick={() => handlePageChange(currentPage - 1)}
         >
           Önceki
-        </Link>
+        </button>
       </div>
-      {numOfpages.map((page, index) => (
+      {numOfPages.map((page, index) => (
         <div
           key={index}
           className={currentPage === page ? "pagination-item activee" : "pagination-item"}
         >
-          <Link className="item" to="#!" onClick={() => onPageChange(page)}>
+          <button className="item" onClick={() => handlePageChange(page)}>
             {page}
-          </Link>
+          </button>
         </div>
       ))}
       <div className="pagination-next">
-        <Link
-          className="text"
-          to="#!"
-          onClick={() => onPageChange(currentPage === numOfpages.length ? currentPage : currentPage + 1)}
+        <button
+          className={currentPage === numOfPages.length ? "text disabled" : "text"}
+          disabled={currentPage === numOfPages.length}
+          onClick={() => handlePageChange(currentPage + 1)}
         >
           Sonraki
-        </Link>
+        </button>
       </div>
     </div>
   );
@@ -47,4 +56,3 @@ Pagination.propTypes = {
 };
 
 export default Pagination;
-
