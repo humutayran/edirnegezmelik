@@ -88,9 +88,19 @@ function Anasayfa() {
       <section ref={sectionRefs[1]}>
         <div className="section2Wrapper">
           <div className="geziPlaniContainer">
-            <div className="geziPlani">
+            <div className="textBox">
               <h1 className="title">Gezi Planlarımıza Göz Atın!</h1>
               <h2 className="explanation">Edirne&#39;de keşfedilecek pek çok harika yer var! Sizin için özenle seçip derlediğimiz gezi planları, Edirne&#39;nin zengin tarihini, kültürünü ve doğal güzelliklerini keşfetmenizi sağlayacak. Seyahat sürenize ve ilgi alanlarınıza göre özelleştirilmiş bu planlardan size en uygun olanı seçin ve Edirne&#39;yi keşfetmeye hemen başlayın. Gezi planlarına <Link to="/plan">buradan</Link> veya üst kısımda bulunan menüden ulaşabilirsiniz.</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section ref={sectionRefs[2]}>
+        <div className="section2Wrapper">
+          <div className="mustTryContainer">
+            <div className="textBox">
+              <h1 className="title">Bunları Yemeden Gitmeyin!</h1>
+              <h2 className="explanation">Edirne&#39;nin zengin tarihini ve kültürel mirasını keşfederken, lezzetli yöresel yemeklerini tatmayı unutmayın. Edirne mutfağının en özel ve meşhur yemeklerini sizin için derledik. Şimdi bu lezzetleri keşfetmeye <Link to="/yiyecek">başlayın.</Link> </h2>
             </div>
           </div>
         </div>
