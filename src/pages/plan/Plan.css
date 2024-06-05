@@ -18,10 +18,10 @@
 .card{
   width: 400px;
   height: 500px;
-  background: rgb(103, 225, 255);
+  background: rgb(248, 234, 225);
   transition: all 0.4s;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.705);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   font-size: 30px;
   font-weight: 900;
 }
@@ -29,8 +29,8 @@
   border-radius: 15px;
   cursor: pointer;
   transform: scale(1.1);
-  box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.705);
-  background: rgb(103, 151, 255);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background: #ffd99d;
 }
 
 .first-content {
@@ -38,10 +38,10 @@
   width: 100%;
   transition: all 0.4s;
   display: flex;
-  justify-content: center;
-  align-items: center;
   opacity: 1;
   border-radius: 15px;
+  flex-direction: column;
+  
 }
 
 .card:hover .first-content {
@@ -67,4 +67,26 @@
   height: 100%;
   font-size: 1.8rem;
   transform: rotate(0deg);
+}
+.plan_title {
+  padding-left: 5%;
+  padding-top: 3%;
+  width: 100%;
+  float: left;
+  font-family: Garamond, serif;
+  word-wrap: break-word; /* Ensure long words break and wrap */
+}
+
+.plan_explanation {
+  color-scheme: dark light;
+  float: left;
+  width: 90%;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5em;
+  padding-left: 5%;
+  word-wrap: break-word;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  padding-top: 6%;
 }

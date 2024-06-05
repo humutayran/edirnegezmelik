@@ -14,7 +14,8 @@ function Plan() {
         </div>
         <div className="card">
           <div className="first-content">
-            <span>First</span>
+            <div className="plan_title">Gezi Planı 1</div>
+            <div className="plan_explanation">Edirne&#39;de keşfedilecek pek çok harika yer var! Sizin için özenle seçip derlediğimiz gezi planları, Edirne&#39;nin zengin tarihini, kültürünü ve doğal güzelliklerini keşfetmenizi sağlayacak. Seyahat sürenize ve ilgi alanlarınıza göre özelleştirilmiş bu planlardan size en uygun olanı seçin ve Edirne&#39;yi keşfetmeye hemen başlayın.</div>
           </div>
           <div className="second-content">
             <span>Second</span>
