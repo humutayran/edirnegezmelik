@@ -33,7 +33,7 @@
   background: #ffd99d;
 }
 
-.first-content {
+.first_content {
   height: 100%;
   width: 100%;
   transition: all 0.4s;
@@ -41,15 +41,14 @@
   opacity: 1;
   border-radius: 15px;
   flex-direction: column;
-  
 }
 
-.card:hover .first-content {
+.card:hover .first_content {
   height: 0px;
   opacity: 0;
 }
 
-.second-content {
+.second_content {
   height: 0%;
   width: 100%;
   opacity: 0;
@@ -60,9 +59,10 @@
   transition: all 0.4s;
   font-size: 0px;
   transform: rotate(90deg) scale(-1);
+  flex-direction: column;
 }
 
-.card:hover .second-content {
+.card:hover .second_content {
   opacity: 1;
   height: 100%;
   font-size: 1.8rem;
@@ -74,7 +74,7 @@
   width: 100%;
   float: left;
   font-family: Garamond, serif;
-  word-wrap: break-word; /* Ensure long words break and wrap */
+  word-wrap: break-word; 
 }
 
 .plan_explanation {
@@ -89,4 +89,27 @@
   overflow: hidden; 
   text-overflow: ellipsis; 
   padding-top: 6%;
+}
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: black;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  color: darkblue;
+}
+ul{
+  padding-bottom:15%;
+}
+.text{
+  font-family: Arial, Helvetica, sans-serif;
 }
