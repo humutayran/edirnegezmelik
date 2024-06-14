@@ -9,7 +9,7 @@ function Yiyecek() {
       <div className="yoreselLezzetler">
         <div className="yiyecekResimContainer">
           <div className="yiyecek">
-            <h1 className="foodName">Tava Ciğeri – Yaprak Ciğer</h1>
+            <h1 className="foodName">Tava Ciğeri</h1>
             <h2 className="foodExplanation">
               Edirne&#39;nin en meşhur lezzetlerinden biri olan tava ciğeri, ince ince dilimlenmiş ve kızartılmış yaprak ciğer olarak servis edilir. Yanında acı biber ve kızarmış ekmek ile sunulur.
             </h2>
@@ -31,7 +31,7 @@ function Yiyecek() {
         </div>
         <div className="yiyecekResimContainer">
           <div className="yiyecek">
-            <h1 className="foodName">Tava Ciğeri – Yaprak Ciğer</h1>
+            <h1 className="foodName">Tava Ciğeri</h1>
             <h2 className="foodExplanation">
               Edirne&#39;nin en meşhur lezzetlerinden biri olan tava ciğeri, ince ince dilimlenmiş ve kızartılmış yaprak ciğer olarak servis edilir. Yanında acı biber ve kızarmış ekmek ile sunulur.
             </h2>
