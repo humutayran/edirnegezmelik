@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Anasayfa() {
   const [scrollOpacity, setScrollOpacity] = useState(1);
+  const sectionRefs = [useRef(), useRef(), useRef(), useRef()];
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
@@ -23,8 +24,6 @@ function Anasayfa() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const sectionRefs = [useRef(), useRef(), useRef(), useRef()];
 
   const scrollToNextSection = (index) => {
     const nextSectionRef = sectionRefs[index + 1];
@@ -100,7 +99,9 @@ function Anasayfa() {
           <div className="mustTryContainer">
             <div className="textBox">
               <h1 className="title">Bunları Yemeden Gitmeyin!</h1>
-              <h2 className="explanation">Edirne&#39;nin zengin tarihini ve kültürel mirasını keşfederken, lezzetli yöresel yemeklerini tatmayı unutmayın. Edirne mutfağının en özel ve meşhur yemeklerini sizin için derledik. Şimdi bu lezzetleri keşfetmeye <Link to="/yiyecek">başlayın.</Link> </h2>
+              <h2 className="explanation">
+                Edirne&#39;nin zengin tarihini ve kültürel mirasını keşfederken, lezzetli yöresel yemeklerini tatmayı unutmayın. Edirne mutfağının en özel ve meşhur yemeklerini sizin için derledik. Şimdi bu lezzetleri keşfetmeye <Link to="/yiyecek" onClick={() => console.log('Navigating to Yiyecek')}>başlayın.</Link>
+              </h2>
             </div>
           </div>
         </div>
@@ -110,3 +111,4 @@ function Anasayfa() {
 }
 
 export default Anasayfa;
+
