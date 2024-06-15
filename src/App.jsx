@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
         <ScrollToTop></ScrollToTop>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Anasayfa />} />
           <Route path="/gezilecek" element={<Gezilecek />} />
