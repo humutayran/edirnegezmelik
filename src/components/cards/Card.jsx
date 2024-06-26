@@ -23,7 +23,7 @@ const card = (artworks, category) => {
   const navigate = useNavigate();
 
   const btnNavigation = (id) => {
-    navigate('/icerik', { state: { id, category } }); // Pass id, title, and content as state to the 'icerik' page
+    navigate('/icerik', { state: { id, category } });
   };
 
   const variantsTitle = {
