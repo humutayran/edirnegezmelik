@@ -32,6 +32,7 @@
 .text.disabled {
   background-color: #555;
   cursor: default;
+  color:#c5bdbd;
 }
 
 .pagination-item {
@@ -49,8 +50,9 @@
   transition: background-color 0.3s;
 }
 
-.item:hover {
+.item:hover, .text:hover {
   background-color: #555;
+  color:white;
 }
 
 .pagination-item.activee .item {
