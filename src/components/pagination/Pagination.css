@@ -32,7 +32,7 @@
 .text.disabled {
   background-color: #555;
   cursor: default;
-  color:#c5bdbd;
+  color:white;
 }
 
 .pagination-item {

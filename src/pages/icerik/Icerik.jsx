@@ -3,7 +3,7 @@ import styles from "./Icerik.module.css";
 import { useLocation } from "react-router-dom";
 import { fetchData } from "../../components/cards/Card";
 const imageUrl = (url) => {
-  const imageSrc = url.fileData[0].name;
+  const imageSrc = url.fileData[1].name;
   return "http://localhost:8080/files/" + imageSrc;
 };
 function Icerik() {
