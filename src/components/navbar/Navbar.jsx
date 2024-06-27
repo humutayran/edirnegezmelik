@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
 import React from "react";
-import logo from "../../images/edirne-kesfet-logo.png";
+import logo from "../../images/kesfet-edirne-logo.png";
 import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
