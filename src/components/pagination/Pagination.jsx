@@ -13,6 +13,7 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
     query.set("page", page);
     navigate(`${location.pathname}?${query.toString()}`);
     onPageChange(page);
+    window.scrollTo({top: 0});
     window.location.reload();
   };
 

@@ -30,7 +30,7 @@ function Gezilecek() {
 
   return (
     <div>
-      {card(touristicSpots, "artworks")}
+      {card(touristicSpots, "touristic-spots")}
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
